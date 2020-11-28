@@ -7,11 +7,14 @@ linksCtrl.renderAddLink = (req, res) => {
 };
 
 linksCtrl.addLink = async (req, res) => {
-    const { title, url, description } = req.body;
+    const { title, url, description,ubicacion,habitacion,cama_sexo} = req.body;
     const newLink = {
         title,
         url,
         description,
+        ubicacion,
+        habitacion,
+        cama_sexo,
         user_id: req.user.id
     };
     await pool.query('INSERT INTO links set ?', [newLink]);
@@ -24,10 +27,36 @@ linksCtrl.renderLinks = async (req, res) => {
     res.render('links/list', { links });
 }
 
+linksCtrl.renderLinks_hospitalario = async (req, res) => {
+    const links_hospitalario = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="hospitalario"', [req.user.id]);
+    res.render('links/list_hospitalario', { links_hospitalario });
+}
+
+linksCtrl.renderLinks_observacion = async (req, res) => {
+    const links_observacion = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="Observación"', [req.user.id]);
+    res.render('links/list_observacion', { links_observacion  });
+}
+
+
+linksCtrl.renderLinks_admin = async (req, res) => {
+    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = ? and fecha_ingreso is null', [req.user.id]);
+    res.render('links/list_todas', { links_admin });
+}
+
+linksCtrl.renderLinks_ocupadas = async (req, res) => {
+    const links_ocupadas = await pool.query('SELECT * FROM links WHERE user_id = ? and fecha_ingreso is not null', [req.user.id]);
+    res.render('links/list_ocupadas', { links_ocupadas });
+}
+
+linksCtrl.renderLinks_sedes_disponible = async (req, res) => {
+    const links_sedes_disponible = await pool.query('SELECT * FROM links WHERE  fecha_ingreso is null', [req.user.id]);
+    res.render('links/list_sedes_disponible', { links_sedes_disponible });
+}
+
 linksCtrl.deleteLink = async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM links WHERE ID = ?', [id]);
-    req.flash('success', 'Link Removed Successfully');
+    req.flash('success', 'Censo Removed Successfully');
     res.redirect('/links');
 };
 
@@ -38,17 +67,57 @@ linksCtrl.renderEditLink = async (req, res) => {
     res.render('links/edit', {link: links[0]});
 };
 
-linksCtrl.editLink = async (req,res) => {
+linksCtrl.renderEditLink_egreso = async (req, res) => {
     const { id } = req.params;
-    const { title, description, url} = req.body; 
+    const links = await pool.query('SELECT * FROM links WHERE id = ?', [id]);
+    console.log(links);
+    res.render('links/edit_egreso', {link: links[0]});
+};
+
+
+
+
+linksCtrl.editLink_egreso = async (req,res) => {
+    const { id } = req.params;
+    const { title, description, url,fecha_egreso,cie_10_egreso,remision} = req.body; 
     const newLink = {
         title,
         description,
-        url
+        url,
+        fecha_egreso,
+        cie_10_egreso,
+        remision
     };
+    
+    
     await pool.query('UPDATE links set ? WHERE id = ?', [newLink, id]);
     req.flash('success', 'Link Updated Successfully');
     res.redirect('/links');
 }
+
+linksCtrl.editLink = async (req,res) => {
+    const { id } = req.params;
+    const { title, description, url,procedencia,fecha_censo,fecha_ingreso, cie_10_ingreso,cedula,nombres,sexo} = req.body; 
+    const newLink = {
+        title,
+        description,
+        url,
+        procedencia,
+        fecha_censo,
+        fecha_ingreso,
+        cie_10_ingreso,
+        cedula,
+        nombres,
+        sexo
+    };
+    
+    
+    await pool.query('UPDATE links set ? WHERE id = ?', [newLink, id]);
+    req.flash('success', 'Censo Updated Successfully');
+    res.redirect('/links');
+}
+
+
+
 
 module.exports = linksCtrl;

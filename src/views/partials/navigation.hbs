@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <i class="fas fa-link"></i> Favorite Links
+     <i class="fas fa-bolt"></i> Censo Hospitlario
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -13,26 +13,40 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-          Links
+          Censo
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/links">All Links</a>
+            <a class="dropdown-item" href="/links">Todas camas de tu Clinica</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/links/add">Add A Link</a>
+            
+            <a class="dropdown-item" href="/links/list_ocupadas">Camas Ocupadas</a>
+            <div class="dropdown-divider"></div>
+             
+             <a class="dropdown-item" href="/links/list_todas">Camas Disponibles</a>
+            <div class="dropdown-divider"></div>
+
+            
+            <a class="dropdown-item" href="/links/add"> Ingreso de Cama</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/profile">Profile</a>
+          <a class="nav-link" href="/profile">Tipos de Censo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/logout">Logout</a>
+          <a class="nav-link" href="/logout">Salir</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/links/list_sedes_disponible">Camas Disponible en Sedes</a>
+        </li>
+        
+            
+         </li>
         {{else}}
         <li class="nav-item">
-          <a class="nav-link" href="/signin">SignIn</a>
+          <a class="nav-link" href="/signin">Ingreso</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/signup">SignUp</a>
+          <a class="nav-link" href="/signup">Registrarse</a>
         </li>
         {{/if}}
       </ul>

@@ -1,20 +1,62 @@
-<div class="col-md-4 mx-auto">
+<div class="col-md-6 mx-auto">
 
     <div class="card">
         <div class="card-body">
             <form action="/links/edit/{{link.id}}" method="POST">
                 <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="Title" value="{{link.title}}" autofocus>
+                    <input type="text" name="title" class="form-control" placeholder="Nombre Cama" value="{{link.title}}" autofocus>
                 </div>
                 <div class="form-group">
-                    <input type="url" name="url" class="form-control" placeholder="URL" value="{{link.url}}">
+                    <input type="text" name="url" class="form-control" placeholder="Tipo cama" value="{{link.url}}">
                 </div>
                 <div class="form-group">
                     <textarea name="description" rows="2" class="form-control" placeholder="Description">{{link.description}}</textarea>
                 </div>
+              
+                  <div class="form-group">
+                            <input type="text" name="procedencia" class="form-control" placeholder="procedencia"  {{link.procedencia}}>
+                        </div>
+                        </div>
+                     <h4>Fecha <span class="label label-default">Censo</span></h4>
+                           <div class="form-group">
+                            <input type="date" name="fecha_censo" class="form-control" placeholder="Fecha Censo"{{link.fecha_censo}}>
+                        </div>
+
+                      <h4>Ingreso <span class="label label-default">Paciente</span></h4>
+                           <div class="form-group">
+                            <input type="date" name="fecha_ingreso" class="form-control" placeholder="Fecha Ingreso"{{link.fecha_ingreso}}>
+                        </div>
+                        <h6>Cie 10 <span class="label label-default">Ingreso</span></h6>
+                          <div class="form-group">
+                            <input type="text" name="cie_10_ingreso" class="form-control" placeholder="Cie 10 Ingreso" {{link.cie_10_ingreso}}>
+                        </div>
+                     <h6>Cedula<span class="label label-default"></span></h6>
+                          <div class="form-group">
+                            <input type="text" name="cedula" class="form-control" placeholder="cedula" {{link.cedula}}>
+                        </div>
+
+                                 <h6>Nombres<span class="label label-default"></span></h6>
+                         <div class="form-group">
+                            <input type="text" name="nombres" class="form-control" placeholder="nombres" {{link.nombres}}>
+                        </div>
+                                 <h6>Sexo <span class="label label-default"></span></h6>
+                         
+                         
+                    
+                        <select class="form-control" name="sexo" id="sexo">
+                            <option selected>Sexo:</option>
+                            <option value="m">Masculino</option>
+                            <option value="f">Femenino</option>
+                           
+                        </select>
+
+                        
+                       
+        
+
                 <div class="form-group">
                     <button class="btn btn-success btn-block">
-                        Save
+                        Guardar
                     </button>
                 </div>
             </form>

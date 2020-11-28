@@ -1,22 +1,72 @@
-<div class="container p-4">
+<div class="container p-2">
     <div class="row">
-        <div class="col-md-4 mx-auto">
+        <div class="col-md-10 mx-auto">
 
             <div class="card">
                 <div class="card-body">
                     <form action="/links/add" method="POST">
                         <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Title" autofocus>
+                            <input type="text" name="title" class="form-control" placeholder="Nombre Cama" autofocus>
                         </div>
-                        <div class="form-group">
-                            <input type="url" name="url" class="form-control" placeholder="URL">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="description" rows="2" class="form-control" placeholder="Description"></textarea>
-                        </div>
+
+
+<h4>Tipo <span class="label label-default">Cama</span></h4>
+                        <select class="form-control" name="url" id="solution">
+                            <option selected>Tipo de Cama:</option>
+                            <option value="Hospitalario">Hospitalario</option>
+                            <option value="Observacion">Observación</option>
+                            <option value="urgencias">Urgencias</option>
+                        </select>
+                        
+                        <h4>Cama <span class="label label-default">Genero</span></h4>
+                        <select class="form-control" name="cama_sexo" id="cama_sexo">
+                            <option selected>Cama Genero:</option>
+                            <option value="Mujer">Mujer</option>
+                            <option value="Hombre">Hombre</option>
+                            <option value="Pediatrica">Pediatricas</option>
+                        </select>
+                        
+
+   <h4>Condición de  <span class="label label-default">Cama</span></h4>
+                        <select class="form-control" name="description" id="description">
+                            <option selected>Condición</option>
+                            <option value="optimo">Óptimo</option>
+                            <option value="manteminiento">Mantenimiento</option>
+                            
+                        </select>
+                        
+
+
+
+
+<h4>Ubicacion  <span class="label label-default">en clinica</span></h4>
+                        <select class="form-control" name="ubicacion" id="ubicacion">
+                            <option selected>Ubicacion:</option>
+                            <option value="bipersonal">Habitación</option>
+                            <option value="pabellon">Pabellon</option>
+                            <option value="sala">Sala de urgencias</option>
+                            <option value="piso">Piso</option>
+                            <option value="piso_a">Piso-lado A</option>
+                            <option value="piso_b">Piso-lado B</option>
+                            <option value="piso_c">Piso-lado C</option>
+                            <option value="piso_d">Piso-lado D</option>
+                        </select>
+<h4>Ubicacion  <span class="label label-default">Cama Compartida-Pabellon-Urgencias</span></h4>
+                        
+
+                        <select class="form-control" name="habitacion" id="habitacion">
+                            <option selected>Habitacion:</option>
+                            <option value="bipersonal">Bipersonal</option>
+                            <option value="unipersonal">Unipersonal </option>
+                            <option value="cama_urgencias">Cama urgencias</option>
+                        </select>   
+
+
+<h4>  <span class="label label-default"></span></h4>
                         <div class="form-group">
                             <button class="btn btn-success btn-block">
-                                Save
+                                Guardar
+                            </button>
                             </button>
                         </div>
                     </form>

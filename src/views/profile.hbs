@@ -3,14 +3,29 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-body">
-                    <h3>Welcome {{user.fullname}}</h3>
+                    <h3>Bienvenido {{user.fullname}}</h3>
                     <h4>{{user.username}}</h4>
-                    <a href="/links" class="btn btn-primary m-4">
-                        Save your Links    
+                    <a href="/links" class="btn btn-success m-4">
+                        Censo Total
                     </a>
+
+                    <div class="jumbotron">
+
+                        <a href="/links/list_hospitalario" class="btn btn-danger m-4">
+                            Censo Hospitalario
+                        </a>
+                    </div>
+                    <div class="jumbotron">
+                        <a href="/links/list_observacion" class="btn btn-warning m-4">
+                            Censo Observacion
+                        </a>
+
+                    </div>
+
+
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </div>
