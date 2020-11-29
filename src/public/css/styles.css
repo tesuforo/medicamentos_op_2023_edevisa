@@ -2,8 +2,20 @@ body {
     background: #f5f6fa;
 font-family: 'Oswald', sans-serif;
 
-    overflow: hidden;
+    overflow: auto;
+
+
+    
 }
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 200px;
+  overflow: auto;
+  }
+  .table-wrapper-scroll-y {
+  display: block;
+  }
 
 .index {
     width: 100vw;
