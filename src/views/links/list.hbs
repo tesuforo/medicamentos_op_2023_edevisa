@@ -1,38 +1,22 @@
+
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-  <meta charset="UTF-8">
-  <meta name="title" content="Título de la WEB">
-  <meta name="description" content="Descripción de la WEB">
-   <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <!-- CSS personalizado --> 
-    <link rel="stylesheet" href="main.css">  
-      
-      
-    <!--datables CSS básico-->
-    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
-    <!--datables estilo bootstrap 4 CSS-->  
-    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
 
-<body>
-  <div class="jumbotron text-center">
+<div class="jumbotron text-center">
     <h4>Bienvenido a tu Censo {{user.fullname}}</h4>
-
   </div>
-
-
-
-  
-   
-      
-      
-
-          <table id="list" class="table table-striped table-dark">
-            <thead>
-              <tr>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
                 <th scope="col">Ingreso</th>
                 <th scope="col">Tiempo de Estancia</th>
                 <th scope="col">Nombre Cama</th>
@@ -53,10 +37,11 @@
                 <th scope="col">Observación</th>
                 <th scope="col">Egreso</th>
               </tr>
-            </thead>
-            <tbody>
-
-              {{#each links}}
+  </thead>
+  
+  
+<div class="container">
+   {{#each links}}
 
               <thead>
 
@@ -91,49 +76,11 @@
                 </div>
               </div>
               {{/each}}
-
-            </tbody>
-          </table>
-     
-      
-  
- 
-  <!--
-
-<div class="container p-4">
-  <div class="row">
-    {{#each links}}
-    <div class="col-md-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <a href="{{url}}" target="_blank">
-            <h3 class="card-title text-uppercase">
-              {{title}}
-            </h3>
-          </a>
-          <p class="m-2">{{description}}</p>
-          <p class="text-muted">
-            {{timeago created_at}}
-          </p>
-          <!--<a class="btn btn-danger" href="/links/delete/{{id}}">
-                        Delete Link
-                    </a>
-          <a class="btn btn-secondary" href="/links/edit/{{id}}">
-            Ingreso
-          </a>
-        </div>
-      </div>
-    </div>
-    {{else}}
-    <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>There are not Links saved yet.</p>
-                <a href="/links/add">Create One!</a>
-            </div>
-  </div>
-  {{/each}}
 </div>
-</div>-->
-</body>
+<div class="col-md-12 text-center">
+<ul class="pagination pagination-lg pager" id="developer_page"></ul>
+</div>
 
-</html>
+
+</table>
+ </html>
