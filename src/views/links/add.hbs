@@ -10,13 +10,21 @@
                         </div>
 
 
-<h4>Tipo <span class="label label-default">Cama</span></h4>
+
+           
+           
+           <h4>Tipo de   <span class="label label-default">Estancia</span></h4>
                         <select class="form-control" name="url" id="solution">
-                            <option selected>Tipo de Cama:</option>
-                            <option value="Hospitalario">Hospitalario</option>
-                            <option value="Observacion">Observación</option>
-                            <option value="urgencias">Urgencias</option>
+                           
+                            <option value="Piso">Piso</option>
+                            <option value="UCI Adulto">UCI Adulto</option>
+                            <option value="UCI Pediatrica">UCI Pediatrica</option>
+                            <option value="UCI Neonatal">UCI Neonatal</option>
+                            <option value="Hospitalizacion Urgencias">Urgencias</option>
+
                         </select>
+
+         
                         
                         <h4>Cama <span class="label label-default">Genero</span></h4>
                         <select class="form-control" name="cama_sexo" id="cama_sexo">
@@ -46,12 +54,9 @@
                             <option value="pabellon">Pabellon</option>
                             <option value="sala">Sala de urgencias</option>
                             <option value="piso">Piso</option>
-                            <option value="piso_a">Piso-lado A</option>
-                            <option value="piso_b">Piso-lado B</option>
-                            <option value="piso_c">Piso-lado C</option>
-                            <option value="piso_d">Piso-lado D</option>
+                           
                         </select>
-<h4>Ubicacion  <span class="label label-default">Cama Compartida-Pabellon-Urgencias</span></h4>
+<h4>Tipo  <span class="label label-default">de cama</span></h4>
                         
 
                         <select class="form-control" name="habitacion" id="habitacion">
@@ -61,6 +66,10 @@
                             <option value="cama_urgencias">Cama urgencias</option>
                         </select>   
 
+ <h6>Red Externa<span class="label label-default"></span></h6>
+                          <div class="form-group">
+                            <input type="text" name="red_externa" class="form-control" placeholder="red externa" {{link.red_extena}}>
+                        </div>
 
 <h4>  <span class="label label-default"></span></h4>
                         <div class="form-group">

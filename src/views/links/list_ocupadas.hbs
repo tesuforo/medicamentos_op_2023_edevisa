@@ -24,7 +24,8 @@
       <th scope="col">Ingreso</th>
       <th scope="col">Tiempo de Estancia</th>
       <th scope="col">Nombre Cama</th>
-      <th scope="col">Tipo cama</th>
+   
+      <th scope="col">Tipo Estancia</th>
       <th scope="col">Ubicación</th>
       <th scope="col">Habitación</th>
       <th scope="col">procedencia</th>
@@ -34,11 +35,13 @@
       <th scope="col">Fecha Egreso</th>
       <th scope="col">Cie 10 Egreso</th>
       <th scope="col">Remision</th>
+      <th scope="col">Causa de Egreso</th>
       <th scope="col">cedula</th>
       <th scope="col">nombres</th>
       <th scope="col">sexo</th>
       <th scope="col">Genero de Cama</th>
       <th scope="col">Observación</th>
+      <th scope="col">Red Externa</th>
       <th scope="col">Egreso</th>
     </tr>
   </thead>
@@ -61,11 +64,13 @@
       <td> {{fecha_egreso}} </td>
       <td> {{cie_10_egreso}} </td>
       <td> {{remision}} </td>
+      <td> {{estado_egreso}} </td>
       <td> {{cedula}} </td>
       <td> {{nombres}} </td>
       <td> {{sexo}} </td>
       <td> {{cama_sexo}} </td>
       <td> {{description}} </td>
+      <td> {{red_externa}} </td>
       <td><a class="btn btn-secondary" href="/links/edit_egreso/{{id}}"><i class="fas fa-apple-alt"></i></a></td>
       <td> <a class="btn btn-danger" href="/links/delete/{{id}}">Anular Regitro</a></td>
     </thead>

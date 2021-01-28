@@ -7,7 +7,7 @@ linksCtrl.renderAddLink = (req, res) => {
 };
 
 linksCtrl.addLink = async (req, res) => {
-    const { title, url, description,ubicacion,habitacion,cama_sexo} = req.body;
+    const { title, url, description,ubicacion,habitacion,cama_sexo,red_externa} = req.body;
     const newLink = {
         title,
         url,
@@ -15,6 +15,7 @@ linksCtrl.addLink = async (req, res) => {
         ubicacion,
         habitacion,
         cama_sexo,
+        red_externa,
         user_id: req.user.id
     };
     await pool.query('INSERT INTO links set ?', [newLink]);
@@ -28,12 +29,12 @@ linksCtrl.renderLinks = async (req, res) => {
 }
 
 linksCtrl.renderLinks_hospitalario = async (req, res) => {
-    const links_hospitalario = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="hospitalario"', [req.user.id]);
+    const links_hospitalario = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="Piso"', [req.user.id]);
     res.render('links/list_hospitalario', { links_hospitalario });
 }
 
 linksCtrl.renderLinks_observacion = async (req, res) => {
-    const links_observacion = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="Observación"', [req.user.id]);
+    const links_observacion = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="UCI Adulto"', [req.user.id]);
     res.render('links/list_observacion', { links_observacion  });
 }
 
@@ -79,14 +80,15 @@ linksCtrl.renderEditLink_egreso = async (req, res) => {
 
 linksCtrl.editLink_egreso = async (req,res) => {
     const { id } = req.params;
-    const { title, description, url,fecha_egreso,cie_10_egreso,remision} = req.body; 
+    const { title, description, url,fecha_egreso,cie_10_egreso,remision,estado_egreso} = req.body; 
     const newLink = {
         title,
         description,
         url,
         fecha_egreso,
         cie_10_egreso,
-        remision
+        remision,
+        estado_egreso,
     };
     
     
@@ -97,7 +99,7 @@ linksCtrl.editLink_egreso = async (req,res) => {
 
 linksCtrl.editLink = async (req,res) => {
     const { id } = req.params;
-    const { title, description, url,procedencia,fecha_censo,fecha_ingreso, cie_10_ingreso,cedula,nombres,sexo} = req.body; 
+    const { title, description, url,procedencia,fecha_censo,fecha_ingreso, cie_10_ingreso,cedula,nombres,sexo,origen_ingreso,} = req.body; 
     const newLink = {
         title,
         description,
@@ -108,7 +110,9 @@ linksCtrl.editLink = async (req,res) => {
         cie_10_ingreso,
         cedula,
         nombres,
-        sexo
+        sexo,
+        origen_ingreso,
+        
     };
     
     
