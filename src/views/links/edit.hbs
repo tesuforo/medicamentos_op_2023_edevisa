@@ -26,9 +26,19 @@
                            <div class="form-group">
                             <input type="date" name="fecha_ingreso" class="form-control" placeholder="Fecha Ingreso"{{link.fecha_ingreso}}>
                         </div>
+
+                        <h4>Tipo de   <span class="label label-default">Estancia</span></h4>
+                        <select class="form-control" name="url" id="solution">
+                           
+                            <option value="Piso">Piso</option>
+                            <option value="UCI Adulto">UCI Adulto</option>
+                            <option value="UCI Pediatrica">UCI Pediatrica</option>
+                            <option value="UCI Neonatal">UCI Neonatal</option>
+                            <option value="Hospitalizacion Urgencias">Urgencias</option>
+
+                        </select>
+
                      <h6>Origen <span class="label label-default">Ingreso</span></h6>
-                         
-                         
                     
                         <select class="form-control" name="origen_ingreso" id="origen_ingreso">
                             <option selected>Origen:</option>
@@ -13059,17 +13069,17 @@
                         </select>
 
 
-                     <h6>Cedula<span class="label label-default"></span></h6>
+                     <h4>Identificación <span class="label label-default">:</span></h4>
                           <div class="form-group">
                             <input type="text" name="cedula" class="form-control" placeholder="cedula" {{link.cedula}}>
                         </div>
                        
 
-                                 <h6>Nombres<span class="label label-default"></span></h6>
+                                 <h4>Nombres <span class="label label-default">:</span></h4>
                          <div class="form-group">
                             <input type="text" name="nombres" class="form-control" placeholder="nombres" {{link.nombres}}>
                         </div>
-                                 <h6>Sexo <span class="label label-default"></span></h6>
+                                 <h4>Sexo <span class="label label-default">:</span></h4>
                          
                          
                     

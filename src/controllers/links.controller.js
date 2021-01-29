@@ -7,10 +7,9 @@ linksCtrl.renderAddLink = (req, res) => {
 };
 
 linksCtrl.addLink = async (req, res) => {
-    const { title, url, description,ubicacion,habitacion,cama_sexo,red_externa} = req.body;
+    const { title, description,ubicacion,habitacion,cama_sexo,red_externa} = req.body;
     const newLink = {
         title,
-        url,
         description,
         ubicacion,
         habitacion,
@@ -80,14 +79,14 @@ linksCtrl.renderEditLink_egreso = async (req, res) => {
 
 linksCtrl.editLink_egreso = async (req,res) => {
     const { id } = req.params;
-    const { title, description, url,fecha_egreso,cie_10_egreso,remision,estado_egreso} = req.body; 
+    const { title, description, url,fecha_egreso,cie_10_egreso,estado_egreso} = req.body; 
     const newLink = {
         title,
         description,
         url,
         fecha_egreso,
         cie_10_egreso,
-        remision,
+       
         estado_egreso,
     };
     
