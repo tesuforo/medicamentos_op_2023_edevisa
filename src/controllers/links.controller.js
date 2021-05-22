@@ -7,15 +7,17 @@ linksCtrl.renderAddLink = (req, res) => {
 };
 
 linksCtrl.addLink = async (req, res) => {
-    const { title, description,ubicacion,habitacion,cama_sexo,red_externa,url,} = req.body;
+    const { title, description,cum,url,laboratorio,estado,medicamentoalternativo1,medicamentoalternativo2,medicamentoalternativo3,} = req.body;
     const newLink = {
         title,
         description,
         url,
-        ubicacion,
-        habitacion,
-        cama_sexo,
-        red_externa,
+        cum,
+        laboratorio,
+        estado,
+        medicamentoalternativo1,
+        medicamentoalternativo2,
+        medicamentoalternativo3,
         user_id: req.user.id
     };
     await pool.query('INSERT INTO links set ?', [newLink]);
@@ -24,7 +26,7 @@ linksCtrl.addLink = async (req, res) => {
 }
 
 linksCtrl.renderLinks = async (req, res) => {
-    const links = await pool.query('SELECT * FROM links WHERE user_id = ?', [req.user.id]);
+    const links = await pool.query('SELECT * FROM links WHERE user_id = 9', [req.user.id]);
     res.render('links/list', { links });
 }
 
@@ -80,14 +82,18 @@ linksCtrl.renderEditLink_egreso = async (req, res) => {
 
 linksCtrl.editLink_egreso = async (req,res) => {
     const { id } = req.params;
-    const { title, description, url,fecha_egreso,cie_10_egreso,estado_egreso} = req.body; 
+    const { title, description,cum,url,laboratorio,estado, medicamentoalternativo1,medicamentoalternativo2,medicamentoalternativo3,} = req.body; 
     const newLink = {
         title,
         description,
         url,
-        fecha_egreso,
-        cie_10_egreso,
-        estado_egreso,
+        cum,
+        laboratorio,
+        estado,
+        medicamentoalternativo1,
+        medicamentoalternativo2,
+        medicamentoalternativo3,
+
     };
     
     
@@ -98,20 +104,17 @@ linksCtrl.editLink_egreso = async (req,res) => {
 
 linksCtrl.editLink = async (req,res) => {
     const { id } = req.params;
-    const { title, description, url,procedencia,fecha_censo,fecha_ingreso, cie_10_ingreso,cedula,nombres,sexo,origen_ingreso,} = req.body; 
+    const { title, description,cum,url,laboratorio,estado,medicamentoalternativo1,medicamentoalternativo2,medicamentoalternativo3,} = req.body; 
     const newLink = {
         title,
         description,
         url,
-        procedencia,
-        fecha_censo,
-        fecha_ingreso,
-        cie_10_ingreso,
-        cedula,
-        nombres,
-        sexo,
-        origen_ingreso,
-        
+        cum,
+        laboratorio,
+        estado, 
+        medicamentoalternativo1,
+        medicamentoalternativo2,
+        medicamentoalternativo3, 
     };
     
     

@@ -1,10 +1,10 @@
 module.exports = {
     database: {
         connectionLimit: 10,
-        host: process.env.DATABASE_HOST || '172.4.1.247',
-        user: process.env.DATABASE_USER || 'rootlinks',
-        password: process.env.DATABASE_PASSWORD || 'Passdblinks123',
+        host: process.env.DATABASE_HOST || 'localhost',
+        user: process.env.DATABASE_USER || 'root',
+        password: process.env.DATABASE_PASSWORD || '89javier',
         database: process.env.DATABASE_NAME || 'db_links'
     },
-    port: process.env.PORT || 4001
+    port: process.env.PORT || 4000
 };

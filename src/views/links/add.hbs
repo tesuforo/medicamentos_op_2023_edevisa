@@ -6,74 +6,104 @@
                 <div class="card-body">
                     <form action="/links/add" method="POST">
                         <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Nombre Cama" autofocus>
+                            <input type="text" name="title" class="form-control" placeholder="MD" value="{{link.title}}"
+                                autofocus>
                         </div>
-
-
-
-           
-           
-           
-
-         
-                        
-                        <h4>Cama <span class="label label-default">Genero:</span></h4>
-                        <select class="form-control" name="cama_sexo" id="cama_sexo">
-                            <option selected>Cama Genero:</option>
-                            <option value="Unisex">Unisex</option>
-                            <option value="Mujer">Mujer</option>
-                            <option value="Hombre">Hombre</option>
-                            <option value="Pediatrica">Pediatricas</option>
-                        </select>
-                        
-
-   <h4>Condición de  <span class="label label-default">Cama:</span></h4>
-                        <select class="form-control" name="description" id="description">
-                            <option selected>Condición</option>
-                            <option value="optimo">Óptimo</option>
-                            <option value="manteminiento">Mantenimiento</option>
-                            
-                        </select>
-                        
-
-
-
-
-<h4>Ubicacion  <span class="label label-default">en clinica:</span></h4>
-                        <select class="form-control" name="ubicacion" id="ubicacion">
-                            <option selected>Ubicacion:</option>
-                            <option value="bipersonal">Habitación</option>
-                            <option value="pabellon">Pabellon</option>
-                            <option value="sala">Sala de urgencias</option>
-                            <option value="piso">Piso</option>
-                           
-                        </select>
-<h4>Tipo  <span class="label label-default">de cama:</span></h4>
-                        
-
-                        <select class="form-control" name="habitacion" id="habitacion">
-                            <option selected>Habitacion:</option>
-                            <option value="bipersonal">Bipersonal</option>
-                            <option value="unipersonal">Unipersonal </option>
-                            <option value="cama_urgencias">Cama urgencias</option>
-                        </select>   
-
- <h4>Red Externa<span class="label label-default">:</span></h4>
-                          <div class="form-group">
-                            <input type="text" name="red_externa" class="form-control" placeholder="red externa" {{link.red_extena}}>
-                        </div>
-
-<h4>  <span class="label label-default"></span></h4>
                         <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                Guardar
-                            </button>
-                            </button>
+                            <textarea name="url" rows="2" class="form-control"
+                                placeholder="Descripción">{{link.url}}</textarea>
                         </div>
-                    </form>
+                        <div class="form-group">
+                            <textarea name="description" rows="2" class="form-control"
+                                placeholder="Descripción Generico">{{link.description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="cum" class="form-control" placeholder="Cum" {{link.cum}}>
+                        </div>
                 </div>
+
+                <div class="form-group">
+                    <h4>Laboratorio  <span class="label label-default">Clínico</span></h4>
+                           <div class="form-group">
+                                <select class="form-control" name="laboratorio" placeholder="Laboratorio"{{link.laboratorio}}>
+                              <option value="DIABETRICS HEALTHCARE S.A.S.">DIABETRICS HEALTHCARE S.A.S.</option>
+  <option value="BIOQUIFAR FARMACEUTICA S.A.">BIOQUIFAR FARMACEUTICA S.A.</option>
+  <option value="LABORATORIOS ECAR S.A.">LABORATORIOS ECAR S.A.</option>
+  <option value="SCANDINAVIA PHARMA LTDA">SCANDINAVIA PHARMA LTDA</option>
+  <option value="GENFAR S.A.">GENFAR S.A.</option>
+  <option value="CIPLA COLOMBIA SAS">CIPLA COLOMBIA SAS</option>
+  <option value="LABORATORIOS BUSSIE S.A">LABORATORIOS BUSSIE S.A</option>
+  <option value="PROFAMILIA">PROFAMILIA</option>
+  <option value="TECNOFARMA COLOMBIA S.A.S.">TECNOFARMA COLOMBIA S.A.S.</option>
+  <option value="GRUNENTHAL COLOMBIANA S.A.">GRUNENTHAL COLOMBIANA S.A.</option>
+  <option value="LABORATORIOS BEST S.A  (MARCA PROPIA)">LABORATORIOS BEST S.A  (MARCA PROPIA)</option>
+  <option value="ADS PHARMA SAS">ADS PHARMA SAS</option>
+  <option value="CLOSTER PHARMA S.A.">CLOSTER PHARMA S.A.</option>
+  <option value="LABQUIFAR LTDA.">LABQUIFAR LTDA.</option>
+  <option value="PFIZER S.A.S  .">PFIZER S.A.S  .</option>
+  <option value="LAFRANCOL S.A.S .">LAFRANCOL S.A.S .</option>
+  <option value="LABORATORIOS LA SANTE S.A. (GENERICOS)">LABORATORIOS LA SANTE S.A. (GENERICOS)</option>
+  <option value="FARMACOL CHINOIN S.A.S.">FARMACOL CHINOIN S.A.S.</option>
+  <option value="PROCAPS S.A  (FARMA)">PROCAPS S.A  (FARMA)</option>
+  <option value="NOVARTIS DE COLOMBIA S.A .">NOVARTIS DE COLOMBIA S.A .</option>
+  <option value="LABORATORIO LAPROFF S.A.">LABORATORIO LAPROFF S.A.</option>
+  <option value="NOVAMED S.A.">NOVAMED S.A.</option>
+  <option value="TECNOQUIMICAS S.A.">TECNOQUIMICAS S.A.</option>
+  <option value="ROPSOHN THERAPEUTICS S.A.S.">ROPSOHN THERAPEUTICS S.A.S.</option>
+  <option value="VITALIS S.A. C.I.">VITALIS S.A. C.I.</option>
+  <option value="MERCK S.A">MERCK S.A</option>
+  <option value="LA SANTE S.A. (GALENO)">LA SANTE S.A. (GALENO)</option>
+  <option value="FARMA DE COLOMBIA S.A.S.">FARMA DE COLOMBIA S.A.S.</option>
+  <option value="LABORATORIOS ALCON DE C/BIA S.">LABORATORIOS ALCON DE C/BIA S.</option>
+  <option value="SANOFI  AVENTIS DE COLOMBIA S.A">SANOFI  AVENTIS DE COLOMBIA S.A</option>
+  <option value="MSN LABS AMERICAS S.A.S.">MSN LABS AMERICAS S.A.S.</option>
+  <option value="SALUS PHARMA LABS S.A.S.">SALUS PHARMA LABS S.A.S.</option>
+  <option value="EUROFARMA COLOMBIA S.A.S.">EUROFARMA COLOMBIA S.A.S.</option>
+  <option value="BIOTOSCANA FARMA S.A">BIOTOSCANA FARMA S.A</option>
+  <option value="LABORATORIOS BAGO DE COL S.A.S.">LABORATORIOS BAGO DE COL S.A.S.</option>
+  <option value="LABORATORIO INTERNACIONAL DE COLOMBIA S.A.S.">LABORATORIO INTERNACIONAL DE COLOMBIA S.A.S.</option>
+  <option value="ASTRAZENECA  COLOMBIA S.A.S.">ASTRAZENECA  COLOMBIA S.A.S.</option>
+  <option value="HUMAX PHARMACEUTICAL S.A.">HUMAX PHARMACEUTICAL S.A.</option>
+  <option value="NATURAL SYSTEMS INTERNATIONAL S.A.">NATURAL SYSTEMS INTERNATIONAL S.A.</option>
+  <option value="LABORATORIOS SIEGFRIED S.A.S.">LABORATORIOS SIEGFRIED S.A.S.</option>
+  <option value="LABORATORIOS LEGRAND S.A">LABORATORIOS LEGRAND S.A</option>
+  <option value="LABORATORIOS BIOPAS S.A.">LABORATORIOS BIOPAS S.A.</option>
+  <option value="actifarma s.a.">actifarma s.a.</option>
+  <option value="ASPEN COLOMBIANA S.A.S.">ASPEN COLOMBIANA S.A.S.</option>
+  <option value="PHARMARIS COLOMBIA S.A.S.">PHARMARIS COLOMBIA S.A.S.</option>
+  <option value="ALLERGAN DE COLOMBIA S.A.">ALLERGAN DE COLOMBIA S.A.</option>
+  <option value="ABBOTT LAB.DE COLOMBIA S.A">ABBOTT LAB.DE COLOMBIA S.A</option>
+  <option value="DROGUERIAS Y FARMACIAS CRUZ VERDE S.A.S.  .">DROGUERIAS Y FARMACIAS CRUZ VERDE S.A.S.  .</option>
+  <option value="GALDERMA DE COLOMBIA S.A">GALDERMA DE COLOMBIA S.A</option>
+  <option value="BAYER S.A.  (FARMA)">BAYER S.A.  (FARMA)</option>
+  <option value="MERCK SHARP  DOHME COLOMBIA S.A.S">MERCK SHARP  DOHME COLOMBIA S.A.S</option>
+  <option value="FRANCO ARANGO Y CIA S EN C">FRANCO ARANGO Y CIA S EN C</option>
+  <option value="INVESTIGACIONES Y DESARROLLO FARMOQUIMICO LTDA">INVESTIGACIONES Y DESARROLLO FARMOQUIMICO LTDA</option>
+  <option value="AXON PHARMA S.A.S.">AXON PHARMA S.A.S.</option>
+  <option value="VESALIUS PHARMA S.A.S.">VESALIUS PHARMA S.A.S.</option>
+  <option value="LABORATORIOS BLASKOV LTDA.">LABORATORIOS BLASKOV LTDA.</option>
+                        </select>
+                </div>
+
+                   <h4>Estado  <span class="label label-default">Medicamento</span></h4>
+                        <select class="form-control" name="estado" id="estado">
+                           
+                            <option value="Agotado Por Laboratorio.">Agotado Por Laboratorio.</option>
+                            <option value="poca existencia">Poca Existencia</option>
+                        </select>
+
+                <h4> <span class="label label-default"></span></h4>
+                <div class="form-group">
+                    <button class="btn btn-success btn-block">
+                        Guardar
+                    </button>
+                    </button>
+                </div>
+                </form>
             </div>
         </div>
-
     </div>
 </div>
+</div>
+
+
