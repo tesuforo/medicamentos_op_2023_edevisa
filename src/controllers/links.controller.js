@@ -26,7 +26,7 @@ linksCtrl.addLink = async (req, res) => {
 }
 
 linksCtrl.renderLinks = async (req, res) => {
-    const links = await pool.query('SELECT * FROM links WHERE user_id = 9', [req.user.id]);
+    const links = await pool.query('SELECT * FROM links WHERE user_id = 9 and prestador ="1"', [req.user.id]);
     res.render('links/list', { links });
 }
 
