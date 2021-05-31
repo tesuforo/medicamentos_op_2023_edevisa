@@ -21,7 +21,7 @@ linksCtrl.addLink = async (req, res) => {
         user_id: req.user.id
     };
     await pool.query('INSERT INTO links set ?', [newLink]);
-    req.flash('success', 'Link Saved Successfully');
+    req.flash('success', 'Medicamento Saved Successfully');
     res.redirect('/links');
 }
 
