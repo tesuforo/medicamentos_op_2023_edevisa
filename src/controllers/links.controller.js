@@ -42,7 +42,7 @@ linksCtrl.renderLinks_observacion = async (req, res) => {
 
 
 linksCtrl.renderLinks_admin = async (req, res) => {
-    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = ? and fecha_ingreso is null', [req.user.id]);
+    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 9 and prestador ="1"', [req.user.id]);
     res.render('links/list_todas', { links_admin });
 }
 
@@ -59,7 +59,7 @@ linksCtrl.renderLinks_sedes_disponible = async (req, res) => {
 linksCtrl.deleteLink = async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM links WHERE ID = ?', [id]);
-    req.flash('success', 'Censo Removed Successfully');
+    req.flash('success', 'Medicamento Removido Satisfactoriamente');
     res.redirect('/links');
 };
 

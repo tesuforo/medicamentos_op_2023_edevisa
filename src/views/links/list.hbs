@@ -28,7 +28,7 @@
   class="table table-bordered table-striped mb-0">
   <thead class="thead-light">
     <tr>
-                <th data-field="col1">Modificar</th>
+                
                 <th data-field="col2">Tiempo en desabastecimiento</th>
                 <th data-field="col3" data-sortable="true">MD</th>
                 <th data-field="col4" data-sortable="true">Descripcion</th>
@@ -37,7 +37,7 @@
                 <th data-field="col7" data-sortable="true" >Laboratorio</th>
                 <th data-field="col8" data-sortable="true">Estado</th>
                 <th data-field="col9" data-sortable="true">Alternativos</th>
-                <th data-field="col10">Dejar de marcar Como Desabastecidos</th>
+                
               </tr>
  
    </thead>
@@ -45,7 +45,7 @@
   <div class="container">
    {{#each links}}
                 <tr>
-                <td><a class="btn btn-secondary" href="/links/edit/{{id}}"><i class="fas fa-prescription-bottle-alt"></i></td>
+              
                 <td>{{timeago created_at}}</td>
                 <td>{{title}}</td>
                 <td>{{url}}</td>
@@ -55,7 +55,10 @@
                 <td>{{estado}}</td>
                 <td><a class="btn btn-secondary" href="/links/edit_egreso/{{id}}"><i class="fas fa-prescription-bottle"></i></a>
                 </td>
-                <td> <a class="btn btn-danger" href="/links/delete/{{id}}">Quitar</a></td>
+                
+                
+                
+               
                 </tr>
               {{else}}
               <div class="col-md-6 mx-auto">
