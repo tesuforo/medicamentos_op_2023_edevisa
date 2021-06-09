@@ -26,9 +26,15 @@ linksCtrl.addLink = async (req, res) => {
 }
 
 linksCtrl.renderLinks = async (req, res) => {
-    const links = await pool.query('SELECT * FROM links WHERE user_id = 9 and prestador ="1"', [req.user.id]);
+    const links = await pool.query('SELECT * FROM links WHERE user_id = 12 and prestador ="OPL_ETICOS_ATL"', [req.user.id]);
     res.render('links/list', { links });
 }
+
+linksCtrl.renderLinks_admin = async (req, res) => {
+    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 12 and prestador ="OPL_ETICOS_ATL"', [req.user.id]);
+    res.render('links/list_todas', { links_admin });
+}
+
 
 linksCtrl.renderLinks_hospitalario = async (req, res) => {
     const links_hospitalario = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="Piso"', [req.user.id]);
@@ -41,10 +47,7 @@ linksCtrl.renderLinks_observacion = async (req, res) => {
 }
 
 
-linksCtrl.renderLinks_admin = async (req, res) => {
-    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 9 and prestador ="1"', [req.user.id]);
-    res.render('links/list_todas', { links_admin });
-}
+
 
 linksCtrl.renderLinks_ocupadas = async (req, res) => {
     const links_ocupadas = await pool.query('SELECT * FROM links WHERE user_id = ? and fecha_ingreso is not null', [req.user.id]);
