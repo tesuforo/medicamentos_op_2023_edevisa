@@ -1,12 +1,17 @@
 body {
-    background: #f5f6fa;
-font-family: 'Oswald', sans-serif;
+  background: #dee2e6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eef2f3, #a4afb8);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eef2f3, #bcc5cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+     font-family: 'Oswald', sans-serif;
 
     overflow: auto;
 
 
     
 }
+
+
 
 .my-custom-scrollbar {
   position: relative;
@@ -37,10 +42,17 @@ font-family: 'Oswald', sans-serif;
     height: 100%;
     padding-top: 8rem;
     padding-bottom: 8rem;
-    background: url('/img/background.png');
+    background-image: url('/img/background.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+   
+}
+
+.wave{
+  position: absolute;
+  width: 75%;
+  bottom: 0;
 }
 
 .masthead h1 {
