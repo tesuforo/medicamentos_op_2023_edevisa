@@ -51,7 +51,7 @@ background: linear-gradient(to right, #eef2f3, #bcc5cc); /* W3C, IE 10+/ Edge, F
 
 .wave{
   position: absolute;
-  width: 75%;
+  width: 100%;
   bottom: 0;
 }
 
