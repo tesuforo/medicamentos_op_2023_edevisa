@@ -26,38 +26,67 @@ linksCtrl.addLink = async (req, res) => {
 }
 
 linksCtrl.renderLinks = async (req, res) => {
-    const links = await pool.query('SELECT * FROM links WHERE user_id = 12 and prestador ="OPL_ETICOS_ATL"', [req.user.id]);
+    const links = await pool.query('SELECT * FROM links WHERE user_id = 12', [req.user.id]);
     res.render('links/list', { links });
 }
 
 linksCtrl.renderLinks_admin = async (req, res) => {
-    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 12 and prestador ="OPL_ETICOS_ATL"', [req.user.id]);
+    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 12', [req.user.id]);
     res.render('links/list_todas', { links_admin });
 }
 
 
+
 linksCtrl.renderLinks_hospitalario = async (req, res) => {
-    const links_hospitalario = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="Piso"', [req.user.id]);
+    const links_hospitalario = await pool.query('SELECT * FROM links WHERE user_id = 11', [req.user.id]);
     res.render('links/list_hospitalario', { links_hospitalario });
 }
 
-linksCtrl.renderLinks_observacion = async (req, res) => {
-    const links_observacion = await pool.query('SELECT * FROM links WHERE user_id = ? and url ="UCI Adulto"', [req.user.id]);
-    res.render('links/list_observacion', { links_observacion  });
-}
+
+
 
 
 
 
 linksCtrl.renderLinks_ocupadas = async (req, res) => {
-    const links_ocupadas = await pool.query('SELECT * FROM links WHERE user_id = ? and fecha_ingreso is not null', [req.user.id]);
+    const links_ocupadas = await pool.query('SELECT * FROM links WHERE user_id = 13', [req.user.id]);
     res.render('links/list_ocupadas', { links_ocupadas });
+
+
 }
 
+linksCtrl.renderLinks_todas_guajira = async (req, res) => {
+    const links_todas_guajira = await pool.query('SELECT * FROM links WHERE user_id = 13', [req.user.id]);
+    res.render('links/list_todas_guajira', { links_todas_guajira });
+
+    
+}
+
+
 linksCtrl.renderLinks_sedes_disponible = async (req, res) => {
-    const links_sedes_disponible = await pool.query('SELECT * FROM links WHERE  fecha_ingreso is null', [req.user.id]);
+    const links_sedes_disponible = await pool.query('SELECT * FROM links WHERE user_id = 14', [req.user.id]);
     res.render('links/list_sedes_disponible', { links_sedes_disponible });
 }
+
+linksCtrl.renderLinks_sedes_disponible_cesar = async (req, res) => {
+    const links_sedes_disponible_cesar = await pool.query('SELECT * FROM links WHERE user_id = 14', [req.user.id]);
+    res.render('links/list_sedes_disponible_cesar', { links_sedes_disponible_cesar });
+}
+
+
+
+linksCtrl.renderLinks_observacion = async (req, res) => {
+    const links_observacion = await pool.query('SELECT * FROM links WHERE user_id = 10', [req.user.id]);
+    res.render('links/list_magdalena', { links_observacion});
+}
+
+linksCtrl.renderLinks_observacion_magdalena = async (req, res) => {
+    const links_observacion_magdalena = await pool.query('SELECT * FROM links WHERE user_id = 10', [req.user.id]);
+    res.render('links/list_todas_magdalena', { links_observacion_magdalena});
+}
+
+
+
 
 linksCtrl.deleteLink = async (req, res) => {
     const { id } = req.params;

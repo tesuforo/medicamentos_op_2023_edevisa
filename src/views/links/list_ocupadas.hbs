@@ -1,126 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">  
-  <head>    
-       
-    <meta charset="UTF-8">
-    <meta name="title" content="Título de la WEB">
-    <meta name="description" content="Descripción de la WEB">    
-    <link href="http://dominio.com/hoja-de-estilos.css" rel="stylesheet" type="text/css"/>    
-  </head>  
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
 
-<body>    
+</head>
+
+
 <div class="jumbotron text-center">
-  <h4>Camas Ocupadas {{user.fullname}}</h4>
+    <h3>Bienvenido al  listado de Medicamento Desabastecidos, usuario : {{user.fullname}}</h3>
+  </div>
 
-</div>
-
-
-
+  <div id="table2" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"></div>
 
 
-<table id="list_ocupadas" class="table table-striped table-dark">
-  <thead>
+<table
+   id="table_id"
+  data-toggle="table"
+  data-search="true"
+  data-pagination="true"
+ 
+ 
+  class="table table-bordered table-striped mb-0 table-responsive">
+  <thead class="thead-light">
     <tr>
-      <th scope="col">Ingreso</th>
-      <th scope="col">Tiempo de Estancia</th>
-      <th scope="col">Nombre Cama</th>
-   
-      <th scope="col">Tipo Estancia</th>
-      <th scope="col">Ubicación</th>
-      <th scope="col">Habitación</th>
-      <th scope="col">procedencia</th>
-      <th scope="col">Fecha Censo</th>
-      <th scope="col">Fecha Ingreso</th>
-      <th scope="col">Cie 10 Ingreso</th>
-      <th scope="col">Fecha Egreso</th>
-     <th scope="col">Cie 10 Egreso</th>
-      <th scope="col">Remision</th>
-      <th scope="col">cedula</th>
-      <th scope="col">nombres</th>
-      
-      <th scope="col">Genero</th>
-      <th scope="col">Genero de Cama</th>
-      <th scope="col">Observación</th>
-      <th scope="col">Red Externa</th>
-      <th scope="col">Egreso</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    {{#each links_ocupadas}}
-
-    <thead>
-
-      <td><a class="btn btn-secondary" href="/links/edit/{{id}}"><i class="fas fa-calendar-times"></i></a></td>
-      <td>{{timeago fecha_ingreso}}</td>
-      <td> {{ title }}</td>
-      <td>{{ url}}</td>
-      <td>{{ ubicacion}}</td>
-      <td>{{ habitacion}}</td>
-      <td> {{procedencia}} </td>
-      <td> {{fecha_censo}} </td>
-      <td> {{fecha_ingreso}} </td>
-      <td> {{cie_10_ingreso}} </td>
-      <td> {{fecha_egreso}} </td>
-       <td> {{cie_10_egreso}} </td>
-      <td> {{estado_egreso}} </td>
-      <td> {{cedula}} </td>
-      <td> {{nombres}} </td>
-      <td> {{sexo}} </td>
-      <td> {{cama_sexo}} </td>
-      <td> {{description}} </td>
-      <td> {{red_externa}} </td>
-      <td><a class="btn btn-secondary" href="/links/edit_egreso/{{id}}"><i class="fas fa-calendar-times"></i></a></td>
-      <td> <a class="btn btn-danger" href="/links/delete/{{id}}">Anular Regitro</a></td>
-    </thead>
-    {{else}}
-
-    <div class="col-md-6 mx-auto">
-      <div class="card card-body text-center">
-        <p>Aún no hay censos guardados.</p>
-        <a href="/links/add">Cree un Nuevo Resgistro de Censo!</a>
-      </div>
+                
+                <th data-field="col2">Tiempo en desabastecimiento Guajira </th>
+                <th data-field="col3" data-sortable="true">MD</th>
+                <th data-field="col4" data-sortable="true">Descripcion</th>
+                <th data-field="col5" data-sortable="true">Descripcion Generico</th>
+                <th data-field="col6" data-sortable="true" >Cum</th>
+                <th data-field="col7" data-sortable="true" >Laboratorio</th>
+                <th data-field="col8" data-sortable="true">Estado</th>
+                <th data-field="col9" data-sortable="true">Alternativos</th>
+                
+              </tr>
+ 
+   </thead>
+  
+  <div class="container">
+   {{#each links_ocupadas}}
+                <tr>
+              
+                <td>{{timeago created_at}}</td>
+                <td>{{title}}</td>
+                <td>{{url}}</td>
+                <td>{{description}}</td>
+                <td>{{cum}}</td>
+                <td>{{laboratorio}}</td>
+                <td>{{estado}}</td>
+                <td><a class="btn btn-secondary" href="/links/edit_egreso/{{id}}"><i class="fas fa-prescription-bottle"></i></a>
+                </td>
+                
+                
+                
+               
+                </tr>
+              {{else}}
+              <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center">
+                  <p>Aún no hay Medicamentos Desasbecidos</p>
+                  <a href="/links/add">Cree un  Medicamento Desabastecidos!</a>
+                </div>
+              </div>
+              {{/each}}
     </div>
-    {{/each}}
+
     
-  </tbody>
 </table>
 
-<!--
-
-<div class="container p-4">
-  <div class="row">
-    {{#each links}}
-    <div class="col-md-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <a href="{{url}}" target="_blank">
-            <h3 class="card-title text-uppercase">
-              {{title}}
-            </h3>
-          </a>
-          <p class="m-2">{{description}}</p>
-          <p class="text-muted">
-            {{timeago created_at}}
-          </p>
-          <!--<a class="btn btn-danger" href="/links/delete/{{id}}">
-                        Delete Link
-                    </a>
-          <a class="btn btn-secondary" href="/links/edit/{{id}}">
-            Ingreso
-          </a>
-        </div>
-      </div>
-    </div>
-    {{else}}
-    <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>There are not Links saved yet.</p>
-                <a href="/links/add">Create One!</a>
-            </div>
-  </div>
-  {{/each}}
-</div>
-</div>-->
- </body>
- </html>
+</html>

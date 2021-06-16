@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +27,8 @@
   class="table table-bordered table-striped mb-0 table-responsive">
   <thead class="thead-light">
     <tr>
-                
-                <th data-field="col2">Tiempo en desabastecimiento Atlantico </th>
+                <th data-field="col1">Modificar</th>
+                <th data-field="col2">Tiempo en desabastecimiento Magdalena</th>
                 <th data-field="col3" data-sortable="true">MD</th>
                 <th data-field="col4" data-sortable="true">Descripcion</th>
                 <th data-field="col5" data-sortable="true">Descripcion Generico</th>
@@ -37,15 +36,15 @@
                 <th data-field="col7" data-sortable="true" >Laboratorio</th>
                 <th data-field="col8" data-sortable="true">Estado</th>
                 <th data-field="col9" data-sortable="true">Alternativos</th>
-                
+                <th data-field="col10">Dejar de marcar Como Desabastecidos</th>
               </tr>
  
    </thead>
   
   <div class="container">
-   {{#each links}}
+   {{#each links_observacion_magdalena}}
                 <tr>
-              
+                <td><a class="btn btn-secondary" href="/links/edit/{{id}}"><i class="fas fa-prescription-bottle-alt"></i></td>
                 <td>{{timeago created_at}}</td>
                 <td>{{title}}</td>
                 <td>{{url}}</td>
@@ -57,7 +56,7 @@
                 </td>
                 
                 
-                
+                <td> <a class="btn btn-danger" href="/links/delete/{{id}}">Quitar</a></td>
                
                 </tr>
               {{else}}
@@ -68,11 +67,6 @@
                 </div>
               </div>
               {{/each}}
-    </div>
-
-    
+    </div>  
 </table>
-
 </html>
-
- 
