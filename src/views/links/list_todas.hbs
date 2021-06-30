@@ -55,8 +55,13 @@
                 <td><a class="btn btn-secondary" href="/links/edit_egreso/{{id}}"><i class="fas fa-prescription-bottle"></i></a>
                 </td>
                 
+    
+               
+             <td><Div id = "Myalert"   class = "alert alert-danger d-flex align-items-center" role="alert" > 
+               <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+     <a  class="btn btn-danger" href = "/links/delete/{{id}}"   class = "cerrar"   datos desestimar = "alert"> Quitar </a> 
+     <Strong> Atencion! </Strong> No podra reversar esta acción </Div> </td>  
                 
-                <td> <a class="btn btn-danger" href="/links/delete/{{id}}">Quitar</a></td>
                
                 </tr>
               {{else}}
