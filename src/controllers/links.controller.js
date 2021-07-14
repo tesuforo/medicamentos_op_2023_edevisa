@@ -21,8 +21,8 @@ linksCtrl.addLink = async (req, res) => {
         user_id: req.user.id
     };
     await pool.query('INSERT INTO links set ?', [newLink]);
-    req.flash('success', 'Medicamento Saved Successfully');
-    res.redirect('/links');
+    req.flash('success_msg', 'Medicamento Guardado Satisfactoriamente');
+    res.redirect('/links/add');
 }
 
 linksCtrl.renderLinks = async (req, res) => {
@@ -91,7 +91,7 @@ linksCtrl.renderLinks_observacion_magdalena = async (req, res) => {
 linksCtrl.deleteLink = async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM links WHERE ID = ?', [id]);
-    req.flash('success', 'Medicamento Removido Satisfactoriamente');
+    req.flash('success_msg', 'Medicamento Removido Satisfactoriamente');
     res.redirect('/links');
 };
 
@@ -130,7 +130,7 @@ linksCtrl.editLink_egreso = async (req,res) => {
     
     
     await pool.query('UPDATE links set ? WHERE id = ?', [newLink, id]);
-    req.flash('success', 'Link Updated Successfully');
+    req.flash('success_msg', 'Medicamento Actualizado Satisfactoriamente');
     res.redirect('/links');
 }
 
@@ -151,7 +151,7 @@ linksCtrl.editLink = async (req,res) => {
     
     
     await pool.query('UPDATE links set ? WHERE id = ?', [newLink, id]);
-    req.flash('success', 'Censo Updated Successfully');
+    req.flash('success_msg', 'Medicamento Actualizado Satisfactoriamente');
     res.redirect('/links');
 }
 
