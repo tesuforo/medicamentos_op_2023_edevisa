@@ -33,8 +33,8 @@ app.use(bodyParser.json());
 
 app.use(session({
   secret: 'secret',
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
   store: new MySQLStore(database)
 }));
 app.use(flash());
