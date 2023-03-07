@@ -26,12 +26,12 @@ linksCtrl.addLink = async (req, res) => {
 }
 
 linksCtrl.renderLinks = async (req, res) => {
-    const links = await pool.query('SELECT * FROM links WHERE user_id = 20', [req.user.id]);
+    const links = await pool.query('SELECT * FROM links WHERE user_id = 27', [req.user.id]);
     res.render('links/list', { links });
 }
 
 linksCtrl.renderLinks_admin = async (req, res) => {
-    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 20', [req.user.id]);
+    const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 27', [req.user.id]);
     res.render('links/list_todas', { links_admin });
 }
 
